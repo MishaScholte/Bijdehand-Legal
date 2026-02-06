@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacybeleid - Bijdehand</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #000;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .highlight {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Privacybeleid</h1>
+    <p class="date">Laatste update: 6 februari 2026</p>
+
+    <div class="highlight">
+        <strong>In het kort:</strong> Wij volgen je niet. Wij verkopen je data niet. Wij gebruiken geen analytics. Jouw
+        data blijft op jouw toestel en in jouw persoonlijke iCloud.
+    </div>
+
+    <h2>1. Inleiding</h2>
+    <p>Bijdehand ("wij", "ons", "onze"), gemaakt door Misha Scholte, is gebouwd op een simpel principe: jouw klantenpassen zijn jouw zaak, niet de
+        onze. Wij geloven dat je privacy niet hoeft op te geven voor gemak.</p>
+
+    <h2>2. Gegevensverzameling & Tracking</h2>
+    <p><strong>Wij verzamelen geen persoonlijke gegevens.</strong></p>
+    <ul>
+        <li>Geen accounts of registratie vereist.</li>
+        <li>Geen analytics van derden (geen Google Analytics, geen Firebase, geen Mixpanel).</li>
+        <li>Geen advertentie-SDK's.</li>
+        <li>Geen locatietracking (Toestemming wordt alleen lokaal gebruikt om kaarten in de buurt te sorteren).</li>
+    </ul>
+
+    <h2>3. Waar jouw data staat</h2>
+    <p>Alle gegevens die je in Bijdehand invoert (kaartnummers, afbeeldingen, notities) worden opgeslagen:</p>
+    <ol>
+        <li><strong>Lokaal</strong> op je toestel.</li>
+        <li><strong>In je persoonlijke iCloud</strong> (indien ingeschakeld), via CloudKit. Deze gegevens zijn
+            versleuteld door Apple en alleen toegankelijk voor jou. Wij, de ontwikkelaars, hebben geen toegang tot jouw
+            iCloud-gegevens.</li>
+    </ol>
+
+    <h2>4. Apple Wallet Integratie</h2>
+    <p>Om de functie "Toevoegen aan Apple Wallet" mogelijk te maken, voeren we een specifieke, beperkte serverhandeling
+        uit:</p>
+    <ul>
+        <li><strong>Wat er gebeurt:</strong> Wanneer je op "Toevoegen aan Wallet" tikt, verstuurt de app de barcode, de naam en de kleur naar een beveiligde server.</li>
+        <li><strong>Waarom:</strong> Apple vereist dat Wallet-passen (.pkpass bestanden) cryptografisch ondertekend worden door een servercertificaat. Dit kan niet veilig op het toestel zelf gebeuren.</li>
+        <li><strong>Verwerker:</strong> Wij gebruiken <strong>Scaleway</strong>, een hostingprovider gevestigd in Parijs, Frankrijk (AVG/GDPR compliant).</li>
+        <li><strong>Bewaartermijn:</strong> Deze gegevens worden in het geheugen verwerkt om de pas te genereren en worden onmiddellijk verwijderd. Wij loggen of bewaren je kaartgegevens niet.</li>
+    </ul>
+
+    <h2>5. Diensten van derden</h2>
+    <p>Wij gebruiken de volgende minimale diensten om de app te laten werken:</p>
+    <ul>
+        <li><strong>Apple (VS):</strong> Verzorgt app-distributie, betalingsverwerking en crashraportage (alleen als je
+            hiervoor gekozen hebt in je iOS-instellingen).</li>
+        <li><strong>Scaleway (EU/Frankrijk):</strong> Hostingprovider voor de Apple Wallet ondertekendienst zoals
+            hierboven beschreven.</li>
+    </ul>
+
+    <h2>6. Jouw Rechten</h2>
+    <p>Omdat wij geen gegevens van je bewaren, kunnen we je account niet "verwijderen" omdat je er geen bij ons hebt. Om
+        je gegevens te verwijderen, verwijder je simpelweg de app en de bijbehorende data uit je iCloud-instellingen.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>Als je vragen hebt over dit beleid, neem dan contact met ons op.</p>
+    <p>Als je vragen hebt over dit beleid, neem dan contact met ons op via <a
+            href="bijdehandapp@proton.me">bijdehandapp@proton.me</a>.</p>
+
+</body>
+
+</html>
