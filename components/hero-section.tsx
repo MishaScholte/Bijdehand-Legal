@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image"; // Keep for AppIcon if used, or standard usage elsewhere
 import HeroImage from "@/app/assets/Hero.png";
 import HeroMobile from "@/app/assets/Hero-mobile.png";
+import HeroMobileSmall from "@/app/assets/Hero-mobile-small.png";
 
 export function HeroSection() {
     return (
@@ -58,6 +59,7 @@ export function HeroSection() {
                     <div className="relative w-full md:w-auto h-auto md:h-[874px] transition-all duration-500 flex items-start md:items-center justify-center">
                         <div className="relative w-full h-full flex items-center justify-center">
                             <picture>
+                                <source media="(max-width: 480px)" srcSet={HeroMobileSmall.src} />
                                 <source media="(max-width: 768px)" srcSet={HeroMobile.src} />
                                 <img
                                     src={HeroImage.src}
