@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = "Bijdehand-Site";
+const repoName = "BijdehandApp";
 // CHANGE ME to your repo name if different, though user said https://github.com/MishaScholte/Bijdehand-Site
 
 const nextConfig: NextConfig = {
