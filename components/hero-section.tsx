@@ -2,6 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import AppIconTransparent from "@/app/assets/AppIconTransparent.png";
+import HeroImage from "@/app/assets/Hero.png";
 
 export function HeroSection() {
     return (
@@ -12,7 +15,7 @@ export function HeroSection() {
                 <div className="max-w-6xl mx-auto px-4 pt-4 md:pt-8 w-full flex justify-start pl-1">
                     <div className="w-[56px] h-[56px] md:w-[80px] md:h-[80px] bg-black border border-white/10 rounded-[14px] md:rounded-[20px] flex items-center justify-center shadow-2xl transition-all duration-300">
                         <Image
-                            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/AppIconTransparent.png`}
+                            src={AppIconTransparent}
                             alt="Bijdehand App Icon"
                             width={50}
                             height={50}
@@ -71,7 +74,7 @@ export function HeroSection() {
                     <div className="relative w-full md:w-auto h-auto md:h-[874px] transition-all duration-500 flex items-start md:items-center justify-center">
                         <div className="relative w-full h-full flex items-center justify-center">
                             <Image
-                                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Hero.png`}
+                                src={HeroImage}
                                 alt="Bijdehand App Hero"
                                 width={2721}
                                 height={2622}
