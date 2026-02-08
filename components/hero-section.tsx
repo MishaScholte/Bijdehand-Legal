@@ -1,31 +1,13 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import AppIconTransparent from "@/app/assets/AppIconTransparent.png";
 import HeroImage from "@/app/assets/Hero.png";
 
 export function HeroSection() {
     return (
         <div className="min-h-0 md:min-h-[90vh] w-full rounded-md flex flex-col md:flex-row items-start md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden pb-12 md:pb-0">
 
-            {/* Header: App Icon - Absolute Positioned */}
-            <div className="absolute top-0 left-0 w-full z-50">
-                <div className="max-w-6xl mx-auto px-4 pt-4 md:pt-8 w-full flex justify-start pl-1">
-                    <div className="w-[56px] h-[56px] md:w-[80px] md:h-[80px] bg-black border border-white/10 rounded-[14px] md:rounded-[20px] flex items-center justify-center shadow-2xl transition-all duration-300">
-                        <Image
-                            src={AppIconTransparent}
-                            alt="Bijdehand App Icon"
-                            width={50}
-                            height={50}
-                            className="object-contain w-[36px] h-[36px] md:w-[50px] md:h-[50px]"
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <div className="p-4 max-w-6xl mx-auto relative z-10 w-full pt-[104px] md:pt-0 grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-8 items-center">
+            <div className="p-4 max-w-6xl mx-auto relative z-10 w-full pt-12 md:pt-0 grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-8 items-center">
                 {/* Left Column: Text & CTA */}
                 <div className="flex flex-col items-center text-center md:items-start md:text-left">
                     <h1 className="text-5xl md:text-7xl font-bold leading-tight pb-1 text-white tracking-tight">
