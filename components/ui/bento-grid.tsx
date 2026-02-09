@@ -82,7 +82,7 @@ export const BentoFeatureCard = ({
             description={description}
             header={
                 <div className="flex flex-1 w-full h-full min-h-[4rem] md:min-h-[6rem] items-center justify-start">
-                    <div className={cn("w-12 h-12 md:w-24 md:h-24 flex items-center justify-center rounded-2xl", iconBgClass)}>
+                    <div className={cn("w-12 h-12 md:w-24 md:h-24 flex items-center justify-center rounded-xl md:rounded-2xl", iconBgClass)}>
                         <Icon className={cn("w-6 h-6 md:w-8 md:h-8", iconColor, iconClassName)} />
                     </div>
                 </div>
