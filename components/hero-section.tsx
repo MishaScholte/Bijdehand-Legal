@@ -8,7 +8,7 @@ import HeroMobileSmall from "@/app/assets/Hero-mobile-small.png";
 
 export function HeroSection() {
     return (
-        <div className="min-h-0 md:min-h-[90vh] w-full rounded-md flex flex-col md:flex-row items-start md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden pb-12 md:pb-0">
+        <div className="min-h-0 md:min-h-[80vh] w-full rounded-md flex flex-col md:flex-row items-start md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden pb-12 md:pb-0">
 
             <div className="p-4 max-w-6xl mx-auto relative z-10 w-full pt-12 md:pt-0 grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-8 items-center">
                 {/* Left Column: Text & CTA */}
