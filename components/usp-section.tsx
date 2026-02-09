@@ -4,7 +4,7 @@ import { ShieldUser, MapPin, Wallet, Check } from "lucide-react";
 
 const IconDesignGuide = () => {
     return (
-        <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center p-1">
+        <div className="absolute inset-0 z-20 pointer-events-none select-none flex items-center justify-center p-1">
             <svg
                 className="w-full h-full opacity-[0.3]"
                 viewBox="0 0 100 100"
@@ -66,8 +66,8 @@ const KnockoutCard = ({
         >
             {/* Icon */}
             <div className={cn("relative z-10 mb-4 p-4 rounded-2xl border overflow-hidden", iconBgClass)}>
-                {iconOverlay}
                 <Icon className={cn("relative z-10 w-6 h-6 md:w-10 md:h-10", iconColor || "text-neutral-200")} />
+                {iconOverlay}
             </div>
 
             {/* Title */}
