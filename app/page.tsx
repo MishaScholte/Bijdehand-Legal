@@ -12,10 +12,16 @@ import {
   EyeOff
 } from "lucide-react";
 
+import { USPSection } from "@/components/usp-section";
+
+// ... (existing imports)
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <HeroSection />
+
+      <USPSection />
 
       <section className="py-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
