@@ -95,6 +95,56 @@ const DotGridPattern = () => {
 };
 
 const RoundedSquareGridPattern = () => {
+    // Create a playful widget-style grid with varying sizes
+    const widgets = [];
+    const gridSize = 28; // Base unit size
+    const cornerRadius = 5;
+    const opacity = 0.08; // Subtle opacity
+
+    // Define an organic widget layout pattern (repeating 140x140 area)
+    const widgetLayout = [
+        // Row 1
+        { x: 0, y: 0, w: 1, h: 1 },
+        { x: 1, y: 0, w: 2, h: 1 },
+        { x: 3, y: 0, w: 1, h: 2 },
+
+        // Row 2
+        { x: 0, y: 1, w: 2, h: 2 },
+        { x: 2, y: 1, w: 1, h: 1 },
+
+        // Row 3
+        { x: 2, y: 2, w: 1, h: 1 },
+        { x: 3, y: 2, w: 1, h: 1 },
+
+        // Row 4
+        { x: 0, y: 3, w: 1, h: 1 },
+        { x: 1, y: 3, w: 1, h: 2 },
+        { x: 2, y: 3, w: 2, h: 1 },
+
+        // Row 5
+        { x: 0, y: 4, w: 2, h: 1 },
+        { x: 2, y: 4, w: 1, h: 1 },
+        { x: 3, y: 4, w: 1, h: 1 },
+    ];
+
+    widgetLayout.forEach((widget, idx) => {
+        widgets.push(
+            <rect
+                key={idx}
+                x={widget.x * gridSize + 2}
+                y={widget.y * gridSize + 2}
+                width={widget.w * gridSize - 4}
+                height={widget.h * gridSize - 4}
+                rx={cornerRadius}
+                ry={cornerRadius}
+                stroke="white"
+                strokeWidth="1.5"
+                fill="none"
+                strokeOpacity={opacity}
+            />
+        );
+    });
+
     return (
         <div
             className="absolute inset-0 pointer-events-none select-none"
@@ -111,22 +161,11 @@ const RoundedSquareGridPattern = () => {
                     id="rounded-square-grid"
                     x="0"
                     y="0"
-                    width="32"
-                    height="32"
+                    width="140"
+                    height="140"
                     patternUnits="userSpaceOnUse"
                 >
-                    <rect
-                        x="4"
-                        y="4"
-                        width="20"
-                        height="20"
-                        rx="5"
-                        ry="5"
-                        stroke="white"
-                        strokeWidth="1.5"
-                        fill="none"
-                        strokeOpacity="0.15"
-                    />
+                    {widgets}
                 </pattern>
                 <rect width="100%" height="100%" fill="url(#rounded-square-grid)" />
             </svg>
