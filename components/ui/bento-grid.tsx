@@ -83,7 +83,7 @@ export const BentoFeatureCard = ({
                     </div>
                 </div>
             }
-            className={className}
+            className={cn("bg-white/5 border-none", className)}
         />
     );
 };
@@ -98,28 +98,18 @@ export const BentoNumberCard = ({
     className?: string;
 }) => {
     return (
-export const BentoNumberCard = ({
-        number,
-        label,
-        className,
-    }: {
-        number: string;
-        label: string;
-        className?: string;
-    }) => {
-        return (
-            <div
-                className={cn(
-                    "row-span-1 rounded-xl shadow-input dark:shadow-none p-6 bg-white/5 justify-center flex flex-col space-y-2 relative overflow-hidden text-center items-center",
-                    className
-                )}
-            >
-                <span className="text-8xl font-bold text-white tracking-tight">
-                    {number}
-                </span>
-                <span className="font-sans font-normal text-neutral-400 text-sm">
-                    {label}
-                </span>
-            </div>
-        );
-    };
+        <div
+            className={cn(
+                "row-span-1 rounded-xl shadow-input dark:shadow-none p-6 bg-white/5 justify-center flex flex-col space-y-2 relative overflow-hidden text-center items-center",
+                className
+            )}
+        >
+            <span className="text-8xl font-bold text-white tracking-tight">
+                {number}
+            </span>
+            <span className="font-sans font-normal text-neutral-400 text-sm">
+                {label}
+            </span>
+        </div>
+    );
+};
