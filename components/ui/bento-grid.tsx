@@ -39,20 +39,11 @@ export const BentoGridItem = ({
     return (
         <div
             className={cn(
-                "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 bg-black border border-white/[0.1] justify-between flex flex-col space-y-4 relative overflow-hidden",
+                "row-span-1 rounded-xl shadow-input dark:shadow-none p-4 bg-black border border-white/[0.1] justify-between flex flex-col space-y-4 relative overflow-hidden",
                 className
             )}
         >
-            <GlowingEffect
-                spread={40}
-                glow={false}
-                disabled={false}
-                proximity={64}
-                inactiveZone={0.01}
-                borderWidth={3}
-            />
-
-            <div className="relative z-10 transition duration-200 group-hover/bento:translate-x-2">
+            <div className="relative z-10">
                 {header && <div className="mb-4">{header}</div>}
 
                 {icon && <div className="mb-2">{icon}</div>}
