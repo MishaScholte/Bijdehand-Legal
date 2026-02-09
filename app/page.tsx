@@ -9,7 +9,7 @@ import {
   Cloud,
   LayoutGrid,
   EyeOff,
-  UserShield
+  ShieldCheck
 } from "lucide-react";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
             <BentoFeatureCard
               title="Private by design"
               description="Jouw data is jouw data. Geen accounts. Geen reclame. Geen cookies."
-              icon={UserShield}
+              icon={ShieldCheck}
               iconColor="text-black"
               iconBgClass="bg-gradient-to-br from-blue-400 to-blue-600 border border-white/20"
               iconClassName="w-16 h-16"
