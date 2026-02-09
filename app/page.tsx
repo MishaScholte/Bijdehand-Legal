@@ -64,8 +64,10 @@ export default function Home() {
               className="md:col-span-2"
             />
             <BentoNumberCard
-              number="soon"
-              label="Meer features"
+              topLabel="In slechts"
+              number="3 tikken"
+              label="stap je over"
+              numberClassName="text-6xl"
               className="md:col-span-1"
             />
 
