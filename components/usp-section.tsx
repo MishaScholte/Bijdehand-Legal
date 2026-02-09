@@ -4,6 +4,7 @@ import { ShieldUser, MapPin, Wallet } from "lucide-react";
 
 interface KnockoutCardProps {
     title: string;
+    description?: string | React.ReactNode;
     icon: React.ElementType;
     iconBgClass?: string;
     iconColor?: string;
@@ -12,6 +13,7 @@ interface KnockoutCardProps {
 
 const KnockoutCard = ({
     title,
+    description,
     icon: Icon,
     iconBgClass,
     iconColor,
@@ -20,7 +22,7 @@ const KnockoutCard = ({
     return (
         <div
             className={cn(
-                "group relative flex flex-col items-start justify-center p-4 md:p-6",
+                "group relative flex flex-col items-start justify-start p-4 md:p-6 h-full",
                 "bg-black rounded-[32px] md:rounded-[48px]",
                 "border border-white/10", // Subtle glassy border
                 "transition-all duration-200 hover:border-white/20 hover:bg-white/[0.02]",
@@ -33,9 +35,14 @@ const KnockoutCard = ({
             </div>
 
             {/* Title */}
-            <h3 className="text-xl md:text-2xl font-bold text-white text-left">
+            <h3 className="text-xl md:text-2xl font-bold text-white text-left mb-2">
                 {title}
             </h3>
+
+            {/* Description */}
+            <div className="text-neutral-400 text-sm md:text-base text-left font-normal">
+                {description}
+            </div>
         </div>
     );
 };
@@ -44,18 +51,27 @@ export function USPSection() {
     const features = [
         {
             title: "Private by design",
+            description: (
+                <ul className="list-disc pl-5 space-y-1">
+                    <li>Geen accounts</li>
+                    <li>Geen cookies</li>
+                    <li>Geen reclame</li>
+                </ul>
+            ),
             icon: ShieldUser,
             iconBgClass: "bg-gradient-to-br from-blue-400 to-blue-600 border-white/20",
             iconColor: "text-white",
         },
         {
             title: "Slimme locaties",
+            description: "De juiste pas, precies wanneer je hem nodig hebt. Slim ontworpen. Batterij- en privacyvriendelijk. Precies zoals het hoort.",
             icon: MapPin,
             iconBgClass: "bg-gradient-to-br from-purple-400 to-purple-600 border-white/20",
             iconColor: "text-white",
         },
         {
             title: "Widgets & Wallet",
+            description: "Voeg je favoriete kaarten toe aan je startscherm of aan je Wallet. Zo heb je altijd de snelste kaarten direct bij de hand.",
             icon: Wallet,
             iconBgClass: "bg-gradient-to-br from-orange-400 to-orange-600 border-white/20",
             iconColor: "text-white",
@@ -70,6 +86,7 @@ export function USPSection() {
                         <KnockoutCard
                             key={index}
                             title={feature.title}
+                            description={feature.description}
                             icon={feature.icon}
                             iconBgClass={feature.iconBgClass}
                             iconColor={feature.iconColor}
