@@ -70,6 +70,60 @@ const BlueprintGrid = () => {
     );
 };
 
+const TopographicGrid = () => {
+    return (
+        <div
+            className="absolute inset-0 pointer-events-none select-none"
+            style={{
+                maskImage: "linear-gradient(to top right, transparent 5%, black 90%)",
+                WebkitMaskImage: "linear-gradient(to top right, transparent 5%, black 90%)",
+            }}
+        >
+            <svg
+                className="absolute inset-0 w-full h-full opacity-[0.4] stroke-purple-400/30"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <path d="M0 100 C 30 80, 60 120, 100 90, 140 60, 180 110, 220 90" strokeWidth="1" />
+                <path d="M0 80 C 40 60, 70 100, 110 70, 150 40, 190 90, 230 70" strokeWidth="1" />
+                <path d="M0 60 C 50 40, 80 80, 120 50, 160 20, 200 70, 240 50" strokeWidth="1" />
+                <path d="M0 40 C 60 20, 90 60, 130 30, 170 10, 210 50, 250 30" strokeWidth="1" />
+                <path d="M0 20 C 70 10, 100 40, 140 10, 180 0, 220 30, 260 10" strokeWidth="1" />
+            </svg>
+        </div>
+    );
+};
+
+const DotNetworkGrid = () => {
+    return (
+        <div
+            className="absolute inset-0 pointer-events-none select-none"
+            style={{
+                maskImage: "linear-gradient(to top right, transparent 5%, black 90%)",
+                WebkitMaskImage: "linear-gradient(to top right, transparent 5%, black 90%)",
+            }}
+        >
+            <svg
+                className="absolute inset-0 w-full h-full opacity-[0.5]"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <defs>
+                    <pattern
+                        id="dot-network-grid"
+                        width="30"
+                        height="30"
+                        patternUnits="userSpaceOnUse"
+                    >
+                        <circle cx="2" cy="2" r="1.5" fill="#fb923c" fillOpacity="0.4" />
+                        <path d="M 2 2 L 30 30 M 30 2 L 2 30" stroke="#fb923c" strokeWidth="0.5" strokeOpacity="0.2" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dot-network-grid)" />
+            </svg>
+        </div>
+    );
+};
+
 interface KnockoutCardProps {
     title: string;
     description?: string | React.ReactNode;
@@ -144,6 +198,7 @@ export function USPSection() {
             icon: MapPin,
             iconBgClass: "bg-gradient-to-br from-purple-400 to-purple-600 border-white/20",
             iconColor: "text-white",
+            background: <TopographicGrid />,
         },
         {
             title: "Widgets & Wallet",
@@ -151,6 +206,7 @@ export function USPSection() {
             icon: Wallet,
             iconBgClass: "bg-gradient-to-br from-orange-400 to-orange-600 border-white/20",
             iconColor: "text-white",
+            background: <DotNetworkGrid />,
         },
     ];
 
