@@ -80,7 +80,7 @@ const TopographicGrid = () => {
             }}
         >
             <svg
-                className="absolute inset-0 w-full h-full opacity-[0.4] stroke-purple-400/30"
+                className="absolute inset-0 w-full h-full opacity-[0.6] stroke-purple-400/60"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
             >
@@ -104,7 +104,7 @@ const DotNetworkGrid = () => {
             }}
         >
             <svg
-                className="absolute inset-0 w-full h-full opacity-[0.5]"
+                className="absolute inset-0 w-full h-full opacity-[0.6]"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <defs>
@@ -114,8 +114,8 @@ const DotNetworkGrid = () => {
                         height="30"
                         patternUnits="userSpaceOnUse"
                     >
-                        <circle cx="2" cy="2" r="1.5" fill="#fb923c" fillOpacity="0.4" />
-                        <path d="M 2 2 L 30 30 M 30 2 L 2 30" stroke="#fb923c" strokeWidth="0.5" strokeOpacity="0.2" />
+                        <circle cx="2" cy="2" r="1.5" fill="#fb923c" fillOpacity="0.6" />
+                        <path d="M 2 2 L 30 30 M 30 2 L 2 30" stroke="#fb923c" strokeWidth="0.5" strokeOpacity="0.4" />
                     </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#dot-network-grid)" />
