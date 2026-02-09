@@ -23,14 +23,14 @@ const KnockoutCard = ({
         <div
             className={cn(
                 "group relative flex flex-col items-start justify-start p-4 md:p-6 h-full",
-                "bg-white/[0.03] rounded-[32px] md:rounded-[48px]",
+                "bg-white/[0.03] rounded-[32px] md:rounded-[40px]",
                 "border border-white/10", // Subtle glassy border
                 "transition-all duration-200 hover:border-white/20 hover:bg-white/[0.02]",
                 className
             )}
         >
             {/* Icon */}
-            <div className={cn("mb-4 p-4 rounded-2xl md:rounded-3xl border", iconBgClass)}>
+            <div className={cn("mb-4 p-4 rounded-2xl border", iconBgClass)}>
                 <Icon className={cn("w-6 h-6 md:w-10 md:h-10", iconColor || "text-neutral-200")} />
             </div>
 
