@@ -2,6 +2,39 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { ShieldUser, MapPin, Wallet, Check } from "lucide-react";
 
+const IconDesignGuide = () => {
+    return (
+        <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center p-1">
+            <svg
+                className="w-full h-full opacity-[0.3]"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                {/* Large Circle (Safe Area) */}
+                <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="0.5" className="text-white/50" />
+
+                {/* Inner Circle (Core Icon Area) */}
+                <circle cx="50" cy="50" r="28" stroke="currentColor" strokeWidth="0.5" className="text-white/30" />
+
+                {/* Crosslines */}
+                <line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" strokeWidth="0.5" className="text-white/30" />
+                <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.5" className="text-white/30" />
+
+                {/* Diagonals */}
+                <line x1="15" y1="15" x2="85" y2="85" stroke="currentColor" strokeWidth="0.5" className="text-white/20" />
+                <line x1="15" y1="85" x2="85" y2="15" stroke="currentColor" strokeWidth="0.5" className="text-white/20" />
+
+                {/* Corner Curves (Squircle hints) */}
+                <path d="M 0 50 Q 0 0 50 0" stroke="currentColor" strokeWidth="0.5" className="text-white/10" fill="none" />
+                <path d="M 100 50 Q 100 0 50 0" stroke="currentColor" strokeWidth="0.5" className="text-white/10" fill="none" />
+                <path d="M 100 50 Q 100 100 50 100" stroke="currentColor" strokeWidth="0.5" className="text-white/10" fill="none" />
+                <path d="M 0 50 Q 0 100 50 100" stroke="currentColor" strokeWidth="0.5" className="text-white/10" fill="none" />
+            </svg>
+        </div>
+    );
+};
+
 interface KnockoutCardProps {
     title: string;
     description?: string | React.ReactNode;
@@ -9,6 +42,7 @@ interface KnockoutCardProps {
     iconBgClass?: string;
     iconColor?: string;
     className?: string;
+    iconOverlay?: React.ReactNode;
 }
 
 const KnockoutCard = ({
@@ -18,6 +52,7 @@ const KnockoutCard = ({
     iconBgClass,
     iconColor,
     className,
+    iconOverlay,
 }: KnockoutCardProps) => {
     return (
         <div
@@ -30,8 +65,9 @@ const KnockoutCard = ({
             )}
         >
             {/* Icon */}
-            <div className={cn("relative z-10 mb-4 p-4 rounded-2xl border", iconBgClass)}>
-                <Icon className={cn("w-6 h-6 md:w-10 md:h-10", iconColor || "text-neutral-200")} />
+            <div className={cn("relative z-10 mb-4 p-4 rounded-2xl border overflow-hidden", iconBgClass)}>
+                {iconOverlay}
+                <Icon className={cn("relative z-10 w-6 h-6 md:w-10 md:h-10", iconColor || "text-neutral-200")} />
             </div>
 
             {/* Title */}
@@ -64,6 +100,7 @@ export function USPSection() {
             icon: ShieldUser,
             iconBgClass: "bg-gradient-to-br from-blue-400 to-blue-600 border-white/20",
             iconColor: "text-white",
+            iconOverlay: <IconDesignGuide />,
         },
         {
             title: "Slimme locaties",
@@ -93,6 +130,7 @@ export function USPSection() {
                             icon={feature.icon}
                             iconBgClass={feature.iconBgClass}
                             iconColor={feature.iconColor}
+                            iconOverlay={feature.iconOverlay}
                         />
                     ))}
                 </div>
