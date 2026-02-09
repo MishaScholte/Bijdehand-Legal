@@ -27,14 +27,13 @@ export default function Home() {
               title={<span className="text-3xl text-neutral-200">Private by design</span>}
               description="Jouw data is jouw data. Geen accounts. Geen reclame. Geen cookies."
               header={
-                <div className="flex flex-1 w-full h-full min-h-[6rem] items-center justify-center">
+                <div className="flex flex-1 w-full h-full min-h-[6rem] items-center justify-start">
                   <div className="w-24 h-16 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center">
                     <EyeOff className="w-8 h-8 text-primary-purple" />
                   </div>
                 </div>
               }
               className="md:col-span-2"
-              icon={<EyeOff className="h-4 w-4 text-neutral-500" />}
             />
 
             {/* Card 2: No Ads (Number) */}
