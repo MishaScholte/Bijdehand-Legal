@@ -96,7 +96,7 @@ const DotGridPattern = () => {
 
 const RoundedSquareGridPattern = () => {
     // Create a playful widget-style grid with varying sizes
-    const widgets = [];
+    const widgets: React.ReactNode[] = [];
     const gridSize = 28; // Base unit size
     const cornerRadius = 5;
     const opacity = 0.08; // Subtle opacity
