@@ -94,7 +94,7 @@ const DotGridPattern = () => {
     );
 };
 
-const PlusGridPattern = () => {
+const RoundedSquareGridPattern = () => {
     return (
         <div
             className="absolute inset-0 pointer-events-none select-none"
@@ -108,16 +108,27 @@ const PlusGridPattern = () => {
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <pattern
-                    id="plus-grid"
+                    id="rounded-square-grid"
                     x="0"
                     y="0"
-                    width="20"
-                    height="20"
+                    width="32"
+                    height="32"
                     patternUnits="userSpaceOnUse"
                 >
-                    <path d="M 10 5 V 15 M 5 10 H 15" stroke="white" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" />
+                    <rect
+                        x="4"
+                        y="4"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        ry="5"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        fill="none"
+                        strokeOpacity="0.15"
+                    />
                 </pattern>
-                <rect width="100%" height="100%" fill="url(#plus-grid)" />
+                <rect width="100%" height="100%" fill="url(#rounded-square-grid)" />
             </svg>
         </div>
     );
@@ -208,6 +219,7 @@ export function USPSection() {
             icon: Wallet,
             iconBgClass: "bg-gradient-to-br from-orange-400 to-orange-600 border-white/20",
             iconColor: "text-white",
+            background: <RoundedSquareGridPattern />,
         },
     ];
 
