@@ -2,6 +2,80 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { ShieldUser, MapPin, Wallet, Check } from "lucide-react";
 
+const TechnicalSchematic = () => {
+    return (
+        <div
+            className="absolute inset-0 pointer-events-none select-none"
+            style={{
+                maskImage: "linear-gradient(to top right, transparent 5%, black 80%)",
+                WebkitMaskImage: "linear-gradient(to top right, transparent 5%, black 80%)",
+            }}
+        >
+            <svg
+                className="absolute inset-0 w-full h-full opacity-[0.5]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+            >
+                {/* Grid - Very subtle */}
+                <path
+                    d="M 10 0 V 100 M 20 0 V 100 M 30 0 V 100 M 40 0 V 100 M 50 0 V 100 M 60 0 V 100 M 70 0 V 100 M 80 0 V 100 M 90 0 V 100
+                       M 0 10 H 100 M 0 20 H 100 M 0 30 H 100 M 0 40 H 100 M 0 50 H 100 M 0 60 H 100 M 0 70 H 100 M 0 80 H 100 M 0 90 H 100"
+                    fill="none"
+                    stroke="#bdc3c7" // light gray
+                    strokeWidth="0.2"
+                    strokeOpacity="0.2"
+                />
+
+                {/* Primary Arc - Focusing on "Shield" / Security concept */}
+                <path
+                    d="M 20 80 A 60 60 0 0 1 80 20"
+                    fill="none"
+                    stroke="#60a5fa" // blue-400
+                    strokeWidth="1"
+                    strokeOpacity="0.8"
+                />
+
+                {/* Secondary Arc - Partial */}
+                <path
+                    d="M 25 75 A 50 50 0 0 1 75 25"
+                    fill="none"
+                    stroke="#60a5fa"
+                    strokeWidth="0.5"
+                    strokeOpacity="0.5"
+                    strokeDasharray="4 2"
+                />
+
+                {/* Center Lines - Precision */}
+                <path
+                    d="M 50 10 V 90 M 10 50 H 90"
+                    fill="none"
+                    stroke="#93c5fd" // blue-300
+                    strokeWidth="0.5"
+                    strokeOpacity="0.6"
+                    strokeDasharray="10 5"
+                />
+
+                {/* Dimension Line - Technical feel */}
+                <path
+                    d="M 85 20 V 80"
+                    fill="none"
+                    stroke="#60a5fa"
+                    strokeWidth="0.5"
+                    strokeOpacity="0.4"
+                />
+                {/* Arrowheads for dimension */}
+                <path d="M 82 25 L 85 20 L 88 25" fill="none" stroke="#60a5fa" strokeWidth="0.5" />
+                <path d="M 82 75 L 85 80 L 88 75" fill="none" stroke="#60a5fa" strokeWidth="0.5" />
+
+                {/* Technical Text Stub (abstract) */}
+                <rect x="87" y="45" width="2" height="10" fill="#60a5fa" fillOpacity="0.4" />
+
+            </svg>
+        </div>
+    );
+};
+
 interface KnockoutCardProps {
     title: string;
     description?: string | React.ReactNode;
@@ -9,6 +83,7 @@ interface KnockoutCardProps {
     iconBgClass?: string;
     iconColor?: string;
     className?: string;
+    background?: React.ReactNode;
 }
 
 const KnockoutCard = ({
@@ -18,6 +93,7 @@ const KnockoutCard = ({
     iconBgClass,
     iconColor,
     className,
+    background,
 }: KnockoutCardProps) => {
     return (
         <div
@@ -29,6 +105,8 @@ const KnockoutCard = ({
                 className
             )}
         >
+            {background}
+
             {/* Icon */}
             <div className={cn("relative z-10 mb-4 p-4 rounded-2xl border", iconBgClass)}>
                 <Icon className={cn("w-6 h-6 md:w-10 md:h-10", iconColor || "text-neutral-200")} />
@@ -64,6 +142,7 @@ export function USPSection() {
             icon: ShieldUser,
             iconBgClass: "bg-gradient-to-br from-blue-400 to-blue-600 border-white/20",
             iconColor: "text-white",
+            background: <TechnicalSchematic />,
         },
         {
             title: "Slimme locaties",
@@ -93,6 +172,7 @@ export function USPSection() {
                             icon={feature.icon}
                             iconBgClass={feature.iconBgClass}
                             iconColor={feature.iconColor}
+                            background={feature.background}
                         />
                     ))}
                 </div>
