@@ -87,3 +87,29 @@ export const BentoFeatureCard = ({
         />
     );
 };
+
+export const BentoNumberCard = ({
+    number,
+    label,
+    className,
+}: {
+    number: string;
+    label: string;
+    className?: string;
+}) => {
+    return (
+        <div
+            className={cn(
+                "row-span-1 rounded-xl shadow-input dark:shadow-none p-4 bg-white/5 border border-white/10 justify-center flex flex-col space-y-2 relative overflow-hidden text-center items-center",
+                className
+            )}
+        >
+            <span className="text-6xl font-bold text-white tracking-tight">
+                {number}
+            </span>
+            <span className="font-sans font-normal text-neutral-400 text-sm">
+                {label}
+            </span>
+        </div>
+    );
+};
