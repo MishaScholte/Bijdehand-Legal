@@ -39,7 +39,7 @@ export const BentoGridItem = ({
     return (
         <div
             className={cn(
-                "row-span-1 rounded-xl shadow-input dark:shadow-none p-4 bg-black border border-white/[0.1] justify-between flex flex-col space-y-4 relative overflow-hidden",
+                "row-span-1 rounded-2xl shadow-input dark:shadow-none p-4 bg-black border border-white/[0.1] justify-between flex flex-col space-y-4 relative overflow-hidden",
                 className
             )}
         >
@@ -108,7 +108,7 @@ export const BentoNumberCard = ({
     return (
         <div
             className={cn(
-                "row-span-1 rounded-xl shadow-input dark:shadow-none p-3 md:p-6 bg-white/5 justify-center flex flex-col space-y-1 md:space-y-2 relative overflow-hidden text-center items-center",
+                "row-span-1 rounded-2xl shadow-input dark:shadow-none p-3 md:p-6 bg-white/5 justify-center flex flex-col space-y-1 md:space-y-2 relative overflow-hidden text-center items-center",
                 className
             )}
         >
