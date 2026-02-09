@@ -2,6 +2,17 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { ShieldUser, MapPin, Wallet, Check } from "lucide-react";
 
+// Add keyframes style
+const KeyframesStyle = () => (
+    <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    `}} />
+);
+
 const IconDesignGuide = () => {
     return (
         <div className="absolute inset-0 z-20 pointer-events-none select-none flex items-center justify-center p-1">
@@ -36,6 +47,53 @@ const IconDesignGuide = () => {
 };
 
 const DotGridPattern = () => {
+    // Generate a grid of dots
+    const dots = [];
+    const rows = 20; // Enough to cover typical card size
+    const cols = 20;
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            // Randomly select some dots to animate
+            const shouldAnimate = Math.random() < 0.1; // 10% chance
+            const delay = Math.random() * 3 + "s"; // Random delay up to 3s
+            const style = shouldAnimate
+                ? { animation: `pulse-dot 3s infinite ${delay}`, opacity: 0.3 }
+                : { opacity: 0.3 };
+
+            dots.push(
+                <circle
+                    key={`${i}-${j}`}
+                    cx={j * 20 + 2}
+                    cy={i * 20 + 2}
+                    r="1.5"
+                    className="fill-white"
+                    style={style}
+                />
+            );
+        }
+    }
+
+    return (
+        <div
+            className="absolute inset-0 pointer-events-none select-none overflow-hidden"
+            style={{
+                maskImage: "linear-gradient(to top right, transparent 0%, white 100%)",
+                WebkitMaskImage: "linear-gradient(to top right, transparent 0%, white 100%)",
+            }}
+        >
+            <KeyframesStyle />
+            <svg
+                className="absolute inset-0 w-full h-full"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                {dots}
+            </svg>
+        </div>
+    );
+};
+
+const PlusGridPattern = () => {
     return (
         <div
             className="absolute inset-0 pointer-events-none select-none"
@@ -49,16 +107,16 @@ const DotGridPattern = () => {
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <pattern
-                    id="dot-grid"
+                    id="plus-grid"
                     x="0"
                     y="0"
                     width="20"
                     height="20"
                     patternUnits="userSpaceOnUse"
                 >
-                    <circle cx="2" cy="2" r="1.5" className="fill-white" fillOpacity="0.3" />
+                    <path d="M 10 5 V 15 M 5 10 H 15" stroke="white" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" />
                 </pattern>
-                <rect width="100%" height="100%" fill="url(#dot-grid)" />
+                <rect width="100%" height="100%" fill="url(#plus-grid)" />
             </svg>
         </div>
     );
@@ -149,6 +207,7 @@ export function USPSection() {
             icon: Wallet,
             iconBgClass: "bg-gradient-to-br from-orange-400 to-orange-600 border-white/20",
             iconColor: "text-white",
+            background: <PlusGridPattern />,
         },
     ];
 
@@ -170,6 +229,6 @@ export function USPSection() {
                     ))}
                 </div>
             </div>
-        </section>
-    );
+        section>
+            );
 }
