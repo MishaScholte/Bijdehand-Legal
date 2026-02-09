@@ -12,7 +12,7 @@ const BlueprintGrid = () => {
             }}
         >
             <svg
-                className="absolute inset-0 w-full h-full opacity-[0.1]"
+                className="absolute inset-0 w-full h-full opacity-[0.4]"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <defs>
@@ -27,7 +27,7 @@ const BlueprintGrid = () => {
                             fill="none"
                             stroke="white"
                             strokeWidth="1"
-                            strokeOpacity="0.3"
+                            strokeOpacity="0.5"
                         />
                     </pattern>
                 </defs>
