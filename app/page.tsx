@@ -21,7 +21,7 @@ export default function Home() {
 
 
           <BentoGrid className="max-w-4xl mx-auto">
-            {/* Card 1: Privacy (Feature Card Template) */}
+            {/* Row 1: Privacy + Stores */}
             <BentoFeatureCard
               title="Private by design"
               description="Jouw data is jouw data. Geen accounts. Geen reclame. Geen cookies."
@@ -31,38 +31,37 @@ export default function Home() {
               iconClassName="w-16 h-16"
               className="md:col-span-2"
             />
-
-            {/* Card 2: 350+ Passes (Number Card Template) */}
             <BentoNumberCard
               number="350+"
               label="ontworpen klantenpassen"
               className="md:col-span-1"
             />
 
-            {/* Card 3: Smart Locations */}
+            {/* Row 2: Battery + Smart Locations */}
+            <BentoNumberCard
+              number="0%"
+              label="Batterij impact"
+              className="md:col-span-1"
+            />
             <BentoFeatureCard
               title="Slimme Locaties"
               description="De juiste pas verschijnt automatisch op je vergrendelscherm als je in de buurt van de winkel bent."
               icon={MapPin}
               iconColor="text-primary-purple"
-              className="md:col-span-1"
+              className="md:col-span-2"
             />
 
-            {/* Card 4: Apple Wallet */}
+            {/* Row 3: Apple Wallet + Placeholder */}
             <BentoFeatureCard
               title="Apple Wallet"
               description="Voeg je favoriete kaarten met één tik toe aan je Apple Wallet voor ultra-snelle toegang."
               icon={Wallet}
               iconColor="text-blue-400"
-              className="md:col-span-1"
+              className="md:col-span-2"
             />
-
-            {/* Card 5: iCloud Sync */}
-            <BentoFeatureCard
-              title="iCloud Sync"
-              description="Al je apparaten altijd up-to-date. Voeg een pas toe op je iPhone, gebruik hem op je Watch."
-              icon={Cloud}
-              iconColor="text-white"
+            <BentoNumberCard
+              number="soon"
+              label="Meer features"
               className="md:col-span-1"
             />
 
