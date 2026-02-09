@@ -24,15 +24,17 @@ export default function Home() {
           <BentoGrid className="max-w-4xl mx-auto">
             {/* Card 1: Privacy (Icon) */}
             <BentoGridItem
-              title="Privacy First"
-              description="Jouw data blijft van jou. Geen tracking, geen analytics, geen accounts. Alles wordt lokaal opgeslagen."
+              title={<span className="text-3xl text-neutral-200">Private by design</span>}
+              description="Jouw data is jouw data. Geen accounts. Geen reclame. Geen cookies."
               header={
-                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 items-center justify-center border border-white/5">
-                  <ShieldCheck className="w-12 h-12 text-primary" />
+                <div className="flex flex-1 w-full h-full min-h-[6rem] items-center justify-center">
+                  <div className="w-24 h-16 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center">
+                    <EyeOff className="w-8 h-8 text-primary-purple" />
+                  </div>
                 </div>
               }
               className="md:col-span-2"
-              icon={<ShieldCheck className="h-4 w-4 text-neutral-500" />}
+              icon={<EyeOff className="h-4 w-4 text-neutral-500" />}
             />
 
             {/* Card 2: No Ads (Number) */}
